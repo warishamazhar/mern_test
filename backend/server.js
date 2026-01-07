@@ -15,7 +15,9 @@ const app = express();
 app.use(express.json());
 app.use(cors())
 connectDb();
-
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
 app.use("/api/auth", authRoute);
 app.use("/api/investments", investmentRoute);
 app.use("/api/dashboard", dashboardRoute);
